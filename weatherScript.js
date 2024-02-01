@@ -1,3 +1,15 @@
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 6,
+    spaceBetween: 20,
+    slidesPerGroup: 6,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    }
+});
+
 const time = ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"];
 
         const dynamicCards = document.getElementById("weatherCards");
@@ -41,6 +53,8 @@ const time = ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07
                 weatherDetails(data);
             });
 
+            swiper.update();
+
         }
 
 
@@ -70,17 +84,6 @@ const time = ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07
         }
 
         
-        var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 6,
-            spaceBetween: 20,
-            slidesPerGroup: 6,
-            loop: true,
-            loopFillGroupWithBlank: true,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            }
-        });
         function weatherDetails(data) {
             document.getElementById("name").innerHTML = data.location.name;
             document.getElementById("CurrentTemperature").innerHTML = data.current.temp_c + " &#176C";
