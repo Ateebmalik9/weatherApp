@@ -18,7 +18,7 @@ const time = ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07
         function loadDefaultCards() {
             // Default city
             const defaultCity = "srinagar";
-            const key = "84204dd2dd9d4ba29b163548242401";
+            const key = "e96c617b9ae7473c8d6103218240510";
 
             // Fetch data for the default city
             let defaultCityFetch = fetch('http://api.weatherapi.com/v1/forecast.json?key=' + key + '&q=' + defaultCity + "&days=1&aqi=no&alerts=no");
@@ -41,7 +41,7 @@ const time = ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07
                 dynamicCards.removeChild(dynamicCards.firstChild);
             }
             city = document.getElementById("city").value;
-            key = "84204dd2dd9d4ba29b163548242401";
+            key = "e96c617b9ae7473c8d6103218240510";
             console.log(city);
 
             let p = fetch('http://api.weatherapi.com/v1/forecast.json?key=' + key + '&q=' + city + "&days=1&aqi=no&alerts=no");
@@ -60,9 +60,6 @@ const time = ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07
 
 
         function test(data) {
-            // while (dynamicCards.firstChild) {
-            //     dynamicCards.removeChild(dynamicCards.firstChild);
-            // }
             let creatingCards = '';
             console.log(data.forecast.forecastday[0].hour, "hour")
             data.forecast.forecastday[0].hour.forEach((day, i) => {
@@ -72,7 +69,7 @@ const time = ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07
                     <div class="card">
                         <div class="card-body">
                             <p class="card-title" id="date">${time[i]}</p>
-                            <p class="card-text icon" id="icon"> <img src=${day.condition.icon}></p>
+                            <p class="card-text icon" id="icon"> <img src=https:${day.condition.icon}></p>
                             <p class="card-text" id="temp">${day.temp_c}&#176C</p>
                         </div>
                     </div>
