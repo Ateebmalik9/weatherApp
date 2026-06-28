@@ -18,7 +18,7 @@ const time = ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07
         function loadDefaultCards() {
             // Default city
             const defaultCity = "srinagar";
-            const key = "e96c617b9ae7473c8d6103218240510";
+            const key = "API_key";
 
             // Fetch data for the default city
             let defaultCityFetch = fetch('http://api.weatherapi.com/v1/forecast.json?key=' + key + '&q=' + defaultCity + "&days=1&aqi=no&alerts=no");
